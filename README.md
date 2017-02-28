@@ -10,11 +10,40 @@ First, you need to clone all files from the project with ```git clone url```. Th
 pip install -r requirements.txt
 ```
 
+Afterwards, you hace to migrate the database. I have configured a sqlite3 database, so you just have to execute the next command:
+
+```
+python manage.py migrate
+```
+
+It will create the database with all tables and columns. It's also necessary to create a superuser with the command:
+
+```
+python manage.py createsuperuser
+```
+
 Finally, you have to point the api url to the frontend side. You can configure this from **./AsoZero/script.js** file:
 
 ```javascript
 var api = '<domain>/api/v1/gato_enfermo/'
 var config = '<domain>/api/v1/configuracion/1/'
+```
+
+## Usage
+
+I have implemented a backoffice and a REST API. The urls and endpoints are:
+
+Backoffice:
+
+```
+/
+```
+
+API:
+
+```
+/api/v1/gatoenfermo/
+/api/v1/configuracion/1/
 ```
 
 ## Official WebSite
