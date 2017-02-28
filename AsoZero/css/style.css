@@ -1,0 +1,72 @@
+header {
+    background-image: url(../img/gato-bengala-5-1280x720x80xX.jpg);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.navbar-brand{
+	padding: 0 0;
+}
+
+.logo{
+	width: 150px;
+}
+
+.img-responsive{
+	width: 360px;
+}
+
+.portfolio-link-text{
+	text-align: center;
+}
+
+.intro-text{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.intro-btn{
+	display: block;
+}
+
+.modal-content{
+	padding: 10px 0px!important;
+}
+
+#about .text{
+	display: block;
+	margin-top: 20px;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.face-image{
+	display: block;
+	text-align: center;
+
+}
+
+.face-image img{
+	width: 220px;
+	height: 220px;
+	margin-bottom: 20px;
+}
+
+.btn-xlg{
+	font-size: 25px;
+}
+
+.caso-imagen{
+	margin-right: 5px;
+	margin-bottom: 30px;
+    display: inline-block;	
+}
+
+.caso-texto{
+	clear: both;
+}
+.caso-imagenes-row{
+	text-align: center;
+}
