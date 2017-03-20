@@ -284,7 +284,7 @@
                             <div class="modal-body">
                                 <h2>{{ item.nombre }}</h2>
                                 <hr class="star-primary">
-                                <div class="caso-imagenes-row">
+                                <div class="caso-imagenes-row" v-if="item.imagen1">
                                     <div class="caso-imagen caso-imagen1">
                                         <img v-bind:src="item.imagen1" class="img-responsive img-centered" alt="">
                                     </div>
@@ -292,7 +292,7 @@
                                         <img v-bind:src="item.imagen2" class="img-responsive img-centered" alt="">
                                     </div>
                                 </div>
-                                <div class="caso-imagenes-row">
+                                <div class="caso-imagenes-row" v-if="item.imagen3">
                                     <div class="caso-imagen caso-imagen3">
                                         <img v-bind:src="item.imagen3" class="img-responsive img-centered" alt="">
                                     </div>
@@ -302,11 +302,11 @@
                                 </div>
                                 <p class="caso-texto">{{ item.descripcion }}</p>
                                 <ul class="list-inline item-details">
-                                    <li>Objetivo:
+                                    <li v-if="item.objetivo">Objetivo:
                                         <strong><a href="http://startbootstrap.com">{{ item.objetivo }}€</a>
                                         </strong>
                                     </li>
-                                    <li>Fecha:
+                                    <li v-if="item.fecha">Fecha:
                                         <strong><a href="http://startbootstrap.com">{{ item.fecha }}</a>
                                         </strong>
                                     </li>
@@ -314,9 +314,10 @@
                                         <strong>
                                             <a href="http://startbootstrap.com">
                                                 <span v-if="item.prioridad === 0">Baja</span>
-                                                <span v-if="item.prioridad === 1">Media</span>
-                                                <span v-if="item.prioridad === 2">Alta</span>
-                                                <span v-if="item.prioridad === 3">Urgente</span>
+                                                <span v-else-if="item.prioridad === 1">Media</span>
+                                                <span v-else-if="item.prioridad === 2">Alta</span>
+                                                <span v-else-if="item.prioridad === 3">Urgente</span>
+                                                <span v-else>Baja</span>
                                             </a>
                                         </strong>
                                     </li>
