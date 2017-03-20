@@ -42,6 +42,8 @@ class GatoEnfermo(models.Model):
 class Configuracion(models.Model):
     quienes_somos = models.TextField(null=False, blank=False)
 
+    imagen_principal = models.ImageField(upload_to="config", max_length=255, null=False, blank=False)
+
     imagenPersona1 = models.ImageField(upload_to="config", max_length=255, null=True, blank=True)
     descripcionPersona1 = models.TextField(null=False, blank=True)
     imagenPersona2 = models.ImageField(upload_to="config", max_length=255, null=True, blank=True)

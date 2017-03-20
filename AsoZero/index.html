@@ -139,12 +139,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2 text">
-                    <span class="face-image"><img v-bind:src="configuracion.imagenPersona1"><span>
+                <div class="col-lg-4 col-lg-offset-2 text" v-if="configuracion.imagenPersona1">
+                    <span class="face-image"><img v-bind:src="configuracion.imagenPersona1"></span>
                     <p>{{ configuracion.descripcionPersona1 }}</p>
                 </div>
-                <div class="col-lg-4 text">
-                    <span class="face-image"><img v-bind:src="configuracion.imagenPersona2"><span>
+                <div class="col-lg-4 text" v-if="configuracion.imagenPersona2">
+                    <span class="face-image"><img v-bind:src="configuracion.imagenPersona2"></span>
                     <p>{{ configuracion.descripcionPersona2 }}</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -219,9 +219,11 @@
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col col-md-4">
+                    <div class="footer-col col-md-4" v-if="configuracion.direccion">
                         <h3>Localización</h3>
                         <p>{{ configuracion.direccion }}</p>
+                    </div>
+                    <div class="footer-col col-md-4" v-else>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>En la Web</h3>
@@ -242,8 +244,8 @@
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Contacto</h3>
-                        <p>Email: <a v-bind:href="'mailto:' + configuracion.email">{{ configuracion.email }}</a></p>
-                        <p>Teléfono: <a v-bind:href="'tel:' + configuracion.telefono">{{ configuracion.telefono }}</a></p>
+                        <p v-if="configuracion.email">Email: <a v-bind:href="'mailto:' + configuracion.email">{{ configuracion.email }}</a></p>
+                        <p v-if="configuracion.telefono">Teléfono: <a v-bind:href="'tel:' + configuracion.telefono">{{ configuracion.telefono }}</a></p>
                     </div>
                 </div>
             </div>
