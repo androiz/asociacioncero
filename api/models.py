@@ -19,10 +19,10 @@ class GatoEnfermo(models.Model):
 
     nombre = models.CharField(max_length=255, null=False, blank=False)
     descripcion = models.TextField(null=False, blank=True)
-    objetivo = models.FloatField(null=False, blank=True)
-    recaudado = models.FloatField(null=False, blank=True, default=0)
-    fecha = models.DateField(null=False, blank=True)
-    prioridad = models.IntegerField(null=False, blank=True, choices=GRAVEDAD)
+    objetivo = models.FloatField(null=True, blank=True)
+    recaudado = models.FloatField(null=True, blank=True, default=0)
+    fecha = models.DateField(null=True, blank=True)
+    prioridad = models.IntegerField(null=True, blank=True, choices=GRAVEDAD)
 
     imagen_principal = models.ImageField(upload_to="photo/%y%m%d", max_length=255)
 
