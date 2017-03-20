@@ -18,18 +18,18 @@ class GatoEnfermo(models.Model):
     )
 
     nombre = models.CharField(max_length=255, null=False, blank=False)
-    descripcion = models.TextField(null=False, blank=False)
-    objetivo = models.FloatField(null=False, blank=False)
-    recaudado = models.FloatField(null=False, blank=False, default=0)
-    fecha = models.DateField(null=False, blank=False)
-    prioridad = models.IntegerField(null=False, blank=False, choices=GRAVEDAD)
+    descripcion = models.TextField(null=False, blank=True)
+    objetivo = models.FloatField(null=False, blank=True)
+    recaudado = models.FloatField(null=False, blank=True, default=0)
+    fecha = models.DateField(null=False, blank=True)
+    prioridad = models.IntegerField(null=False, blank=True, choices=GRAVEDAD)
 
     imagen_principal = models.ImageField(upload_to="photo/%y%m%d", max_length=255)
 
-    imagen1 = models.ImageField(upload_to="photo/%y%m%d", max_length=255)
-    imagen2 = models.ImageField(upload_to="photo/%y%m%d", max_length=255)
-    imagen3 = models.ImageField(upload_to="photo/%y%m%d", max_length=255)
-    imagen4 = models.ImageField(upload_to="photo/%y%m%d", max_length=255)
+    imagen1 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
+    imagen2 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
+    imagen3 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
+    imagen4 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
 
     url_paypal = models.URLField(blank=True)
 
@@ -42,24 +42,24 @@ class GatoEnfermo(models.Model):
 class Configuracion(models.Model):
     quienes_somos = models.TextField(null=False, blank=False)
 
-    imagenPersona1 = models.ImageField(upload_to="config", max_length=255)
-    descripcionPersona1 = models.TextField(null=False, blank=False)
-    imagenPersona2 = models.ImageField(upload_to="config", max_length=255)
-    descripcionPersona2 = models.TextField(null=False, blank=False)
+    imagenPersona1 = models.ImageField(upload_to="config", max_length=255, null=True, blank=True)
+    descripcionPersona1 = models.TextField(null=False, blank=True)
+    imagenPersona2 = models.ImageField(upload_to="config", max_length=255, null=True, blank=True)
+    descripcionPersona2 = models.TextField(null=False, blank=True)
 
-    email = models.EmailField(null=False, blank=False)
+    email = models.EmailField(null=False, blank=True)
 
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="El telefono debe tener este formato: '+999999999'. Hasta 15 digitos permitidos.")
-    telefono = models.CharField(max_length=16, validators=[phone_regex], blank=False, null=False) # validators should be a list
+    telefono = models.CharField(max_length=16, validators=[phone_regex], blank=True, null=True) # validators should be a list
 
-    direccion = models.CharField(max_length=100, null=False, blank=False)
+    direccion = models.CharField(max_length=100, null=True, blank=True)
 
-    pagina_facebook = models.URLField(blank=False)
-    pagina_google = models.URLField(blank=False)
-    pagina_twitter = models.URLField(blank=False)
-    pagina_linkedin = models.URLField(blank=False)
+    pagina_facebook = models.URLField(blank=True)
+    pagina_google = models.URLField(blank=True)
+    pagina_twitter = models.URLField(blank=True)
+    pagina_linkedin = models.URLField(blank=True)
 
-    paypal_url = models.URLField(blank=False)
+    paypal_url = models.URLField(blank=True)
 
     def __unicode__(self):
         return "Configuracion"

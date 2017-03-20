@@ -25,7 +25,7 @@ SECRET_KEY = 'kl$yb&0v+!1ipn=$$ec6l6))dqjldueh=_d9!@lu_5!sojd$zd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['asociacioncero.pythonanywhere.com']
+ALLOWED_HOSTS = ['asociacioncero.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
@@ -146,3 +146,8 @@ REST_FRAMEWORK = {
     ],
     'PAGE_SIZE': 10
 }
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
