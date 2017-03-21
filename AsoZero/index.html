@@ -290,11 +290,8 @@
                                         </strong>
                                     </li>
                                 </ul>
-                                <ul class="list-inline item-details">
-                                    <li v-if="item.en_adopcion">
-                                        <h3><span class="label label-danger">En Adopción</span></h3>
-                                    </li>
-                                    <li v-if="item.prioridad">Prioridad:
+                                <ul class="list-inline item-details" v-if="item.prioridad">
+                                    <li>Prioridad:
                                         <strong>
                                             <a href="http://startbootstrap.com">
                                                 <span v-if="item.prioridad === 1">Baja</span>
@@ -303,6 +300,11 @@
                                                 <span v-if="item.prioridad === 4">Urgente</span>
                                             </a>
                                         </strong>
+                                    </li>
+                                </ul>
+                                <ul class="list-inline item-details">
+                                    <li v-if="item.en_adopcion">
+                                        <h3><span class="label label-danger">En Adopción</span></h3>
                                     </li>
                                 </ul>
                                 <button type="button" class="btn btn-default btn-lg btn-xlg" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
