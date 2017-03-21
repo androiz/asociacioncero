@@ -40,6 +40,9 @@ class GatoEnfermo(models.Model):
 
     # Hazte Teaming
 
+    class Meta:
+        verbose_name_plural = "Gatos Enfermos"
+
     def __unicode__(self):
         return self.nombre
 
@@ -56,6 +59,9 @@ class Configuracion(models.Model):
 
     # Seccion Quienes Somos
     quienes_somos = models.TextField(null=False, blank=False)
+
+    class Meta:
+        verbose_name_plural = "Configuracion"
 
     def __unicode__(self):
         return "Configuracion"
