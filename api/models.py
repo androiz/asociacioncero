@@ -5,10 +5,10 @@ from django.core.validators import RegexValidator
 
 class GatoEnfermo(models.Model):
 
-    BAJA = 0
-    MEDIA = 1
-    ALTA = 2
-    URGENTE = 3
+    BAJA = 1
+    MEDIA = 2
+    ALTA = 3
+    URGENTE = 4
 
     GRAVEDAD = (
         (BAJA, 'Baja'),

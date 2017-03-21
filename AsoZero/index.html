@@ -292,16 +292,15 @@
                                 </ul>
                                 <ul class="list-inline item-details">
                                     <li v-if="item.en_adopcion">
-                                        <h3><span class="label label-warning">En Adopcioón</span></h3>
+                                        <h3><span class="label label-danger">En Adopción</span></h3>
                                     </li>
                                     <li v-if="item.prioridad">Prioridad:
                                         <strong>
                                             <a href="http://startbootstrap.com">
-                                                <span v-if="item.prioridad === 0">Baja</span>
-                                                <span v-else-if="item.prioridad === 1">Media</span>
-                                                <span v-else-if="item.prioridad === 2">Alta</span>
-                                                <span v-else-if="item.prioridad === 3">Urgente</span>
-                                                <span v-else>Baja</span>
+                                                <span v-if="item.prioridad === 1">Baja</span>
+                                                <span v-if="item.prioridad === 2">Media</span>
+                                                <span v-if="item.prioridad === 3">Alta</span>
+                                                <span v-if="item.prioridad === 4">Urgente</span>
                                             </a>
                                         </strong>
                                     </li>
