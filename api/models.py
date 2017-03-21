@@ -24,13 +24,12 @@ class GatoEnfermo(models.Model):
 
     en_adopcion = models.BooleanField(default=False)
 
-    url_paypal = models.URLField(blank=True)
-
     # Recaudatorio
     recaudar = models.BooleanField(default=False)
     objetivo = models.FloatField(null=True, blank=True)
     recaudado = models.FloatField(null=True, blank=True, default=0)
     fecha = models.DateField(null=True, blank=True)
+    url_paypal = models.URLField(blank=True)
 
     # Extra imagenes
     imagen1 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
