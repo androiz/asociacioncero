@@ -139,14 +139,6 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2 text" v-if="configuracion.imagenPersona1">
-                    <span class="face-image"><img v-bind:src="configuracion.imagenPersona1"></span>
-                    <p>{{ configuracion.descripcionPersona1 }}</p>
-                </div>
-                <div class="col-lg-4 text" v-if="configuracion.imagenPersona2">
-                    <span class="face-image"><img v-bind:src="configuracion.imagenPersona2"></span>
-                    <p>{{ configuracion.descripcionPersona2 }}</p>
-                </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a v-bind:href="configuracion.paypal_url" class="btn btn-warning btn-lg btn-outline">
                         <i class="fa fa-credit-card"></i> Ayudanos!
@@ -219,33 +211,20 @@
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col col-md-4" v-if="configuracion.direccion">
-                        <h3>Localización</h3>
-                        <p>{{ configuracion.direccion }}</p>
-                    </div>
-                    <div class="footer-col col-md-4" v-else>
-                    </div>
-                    <div class="footer-col col-md-4">
+                    <div class="footer-col col-md-6">
                         <h3>En la Web</h3>
                         <ul class="list-inline">
                             <li>
                                 <a v-bind:href="configuracion.pagina_facebook" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
                             <li>
-                                <a v-bind:href="configuracion.pagina_google" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
-                            </li>
-                            <li>
-                                <a v-bind:href="configuracion.pagina_twitter" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a v-bind:href="configuracion.pagina_linkedin" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                                <a v-bind:href="configuracion.pagina_instagram" class="btn-social btn-outline"><i class="fa fa-fw fa-instagram"></i></a>
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-col col-md-4">
+                    <div class="footer-col col-md-6">
                         <h3>Contacto</h3>
                         <p v-if="configuracion.email">Email: <a v-bind:href="'mailto:' + configuracion.email">{{ configuracion.email }}</a></p>
-                        <p v-if="configuracion.telefono">Teléfono: <a v-bind:href="'tel:' + configuracion.telefono">{{ configuracion.telefono }}</a></p>
                     </div>
                 </div>
             </div>
@@ -285,36 +264,37 @@
                                 <h2>{{ item.nombre }}</h2>
                                 <hr class="star-primary">
                                 <div class="caso-imagenes-row" v-if="item.imagen1">
-                                    <div class="caso-imagen caso-imagen1">
-                                        <img v-bind:src="item.imagen1" class="img-responsive img-centered" alt="">
+                                    <div class="caso-imagen caso-imagen_principal">
+                                        <img v-bind:src="item.imagen_principal" class="img-responsive img-centered" alt="">
                                     </div>
                                     <div class="caso-imagen caso-imagen2">
-                                        <img v-bind:src="item.imagen2" class="img-responsive img-centered" alt="">
+                                        <img v-bind:src="item.imagen1" class="img-responsive img-centered" alt="">
                                     </div>
                                 </div>
-                                <div class="caso-imagenes-row" v-if="item.imagen3">
+                                <div class="caso-imagenes-row" v-if="item.imagen2">
                                     <div class="caso-imagen caso-imagen3">
-                                        <img v-bind:src="item.imagen3" class="img-responsive img-centered" alt="">
+                                        <img v-bind:src="item.imagen2" class="img-responsive img-centered" alt="">
                                     </div>
                                     <div class="caso-imagen caso-imagen4">
-                                        <img v-bind:src="item.imagen4" class="img-responsive img-centered" alt="">
+                                        <img v-bind:src="item.imagen3" class="img-responsive img-centered" alt="">
                                     </div>
                                 </div>
                                 <p class="caso-texto">{{ item.descripcion }}</p>
-                                <ul class="list-inline item-details">
+                                <ul class="list-inline item-details" v-if="item.recaudar">
                                     <li v-if="item.objetivo">Objetivo:
                                         <strong><a href="http://startbootstrap.com">{{ item.objetivo }}€</a>
-                                        </strong>
-                                    </li>
-                                    <li v-else>Objetivo:
-                                        <strong><a href="http://startbootstrap.com">Dar en adopcion</a>
                                         </strong>
                                     </li>
                                     <li v-if="item.fecha">Fecha:
                                         <strong><a href="http://startbootstrap.com">{{ item.fecha }}</a>
                                         </strong>
                                     </li>
-                                    <li>Gravedad:
+                                </ul>
+                                <ul class="list-inline item-details">
+                                    <li v-if="item.en_adopcion">
+                                        <h3><span class="label label-warning">En Adopcioón</span></h3>
+                                    </li>
+                                    <li v-if="item.prioridad">Prioridad:
                                         <strong>
                                             <a href="http://startbootstrap.com">
                                                 <span v-if="item.prioridad === 0">Baja</span>
