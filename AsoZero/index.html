@@ -135,7 +135,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <pre>{{ configuracion.quienes_somos }}</pre>
+                    <p>{{ configuracion.quienes_somos }}</p>
                 </div>
             </div>
             <div class="row">
@@ -263,9 +263,9 @@
                             <div class="modal-body">
                                 <h2>{{ item.nombre }}</h2>
                                 <hr class="star-primary">
-                                <div class="caso-imagenes-row" v-if="item.1">
+                                <div class="caso-imagenes-row" v-if="item.imagen1">
                                     <div class="caso-imagen caso-imagen1">
-                                        <img v-bind:src="item.1" class="img-responsive img-centered" alt="">
+                                        <img v-bind:src="item.imagen1" class="img-responsive img-centered" alt="">
                                     </div>
                                     <div class="caso-imagen caso-imagen2">
                                         <img v-bind:src="item.imagen2" class="img-responsive img-centered" alt="">
@@ -279,7 +279,7 @@
                                         <img v-bind:src="item.imagen4" class="img-responsive img-centered" alt="">
                                     </div>
                                 </div>
-                                <pre class="caso-texto">{{ item.descripcion }}</pre>
+                                <p class="caso-texto">{{ item.descripcion }}</p>
                                 <ul class="list-inline item-details" v-if="item.recaudar">
                                     <li v-if="item.objetivo">Objetivo:
                                         <strong><a href="http://startbootstrap.com">{{ item.objetivo }}€</a>
