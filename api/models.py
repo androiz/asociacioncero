@@ -59,7 +59,7 @@ class Configuracion(models.Model):
     paypal_url = models.URLField(blank=True)
 
     # Seccion Quienes Somos
-    quienes_somos = RichTextField()
+    quienes_somos = RichTextField(null=False, blank=False)
 
     class Meta:
         verbose_name_plural = "Configuracion"
