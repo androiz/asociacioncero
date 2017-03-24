@@ -135,7 +135,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p>{{ configuracion.quienes_somos }}</p>
+                    <div v-html="configuracion.quienes_somos"></div>
                 </div>
             </div>
             <div class="row">
@@ -279,7 +279,7 @@
                                         <img v-bind:src="item.imagen4" class="img-responsive img-centered" alt="">
                                     </div>
                                 </div>
-                                <p class="caso-texto">{{ item.descripcion }}</p>
+                                <p class="caso-texto" v-html="item.descripcion"></p>
                                 <ul class="list-inline item-details" v-if="item.recaudar">
                                     <li v-if="item.objetivo">Objetivo:
                                         <strong><a href="http://startbootstrap.com">{{ item.objetivo }}€</a>
