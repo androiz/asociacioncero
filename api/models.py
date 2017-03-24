@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import RegexValidator
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -18,7 +18,7 @@ class GatoEnfermo(models.Model):
     )
 
     nombre = models.CharField(max_length=255, null=False, blank=False)
-    descripcion = models.TextField(null=False, blank=False)
+    descripcion = RichTextField(null=False, blank=False)
     imagen_principal = models.ImageField(upload_to="photo/%y%m%d", max_length=255)
     prioridad = models.IntegerField(null=True, blank=True, choices=GRAVEDAD)
 
@@ -35,6 +35,7 @@ class GatoEnfermo(models.Model):
     imagen1 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
     imagen2 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
     imagen3 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
+    imagen4 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
 
     # Protocolo Adoption
 
@@ -58,7 +59,7 @@ class Configuracion(models.Model):
     paypal_url = models.URLField(blank=True)
 
     # Seccion Quienes Somos
-    quienes_somos = models.TextField(null=False, blank=False)
+    quienes_somos = RichTextField(null=False, blank=False)
 
     class Meta:
         verbose_name_plural = "Configuracion"
