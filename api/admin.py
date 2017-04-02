@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import GatoEnfermo, Configuracion
+from .models import GatoEnfermo, GatoFinalFeliz, Configuracion
+
 
 # Register your models here.
 @admin.register(GatoEnfermo)
@@ -17,9 +18,24 @@ class GatoEnfermmoAdmin(admin.ModelAdmin):
         }),
         ('Imagenes Extra', {
             'classes': ('collapse',),
-            'fields': ('imagen1', 'imagen2', 'imagen3',),
+            'fields': ('imagen1', 'imagen2', 'imagen3', 'imagen4',),
         }),
     )
+
+
+@admin.register(GatoFinalFeliz)
+class GatoFinalFelizAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'fecha',)
+    fieldsets = (
+        (None, {
+            'fields': ('nombre', 'descripcion', 'imagen_principal', 'fecha',)
+        }),
+        ('Imagenes Extra', {
+            'classes': ('collapse',),
+            'fields': ('imagen1', 'imagen2', 'imagen3', 'imagen4',),
+        }),
+    )
+
 
 @admin.register(Configuracion)
 class ConfiguracionAdmin(admin.ModelAdmin):
@@ -31,5 +47,9 @@ class ConfiguracionAdmin(admin.ModelAdmin):
         ('Quienes Somos', {
             'classes': ('collapse',),
             'fields': ('quienes_somos',),
+        }),
+        ('Protocolo de Adopcion', {
+            'classes': ('collapse',),
+            'fields': ('protocolo_parrafo_1', 'protocolo_parrafo_2',)
         }),
     )

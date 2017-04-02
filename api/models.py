@@ -1,10 +1,9 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 
+
 # Create your models here.
-
 class GatoEnfermo(models.Model):
-
     BAJA = 1
     MEDIA = 2
     ALTA = 3
@@ -37,10 +36,6 @@ class GatoEnfermo(models.Model):
     imagen3 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
     imagen4 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
 
-    # Protocolo Adoption
-
-    # Hazte Teaming
-
     class Meta:
         verbose_name_plural = "Gatos Enfermos"
 
@@ -50,8 +45,32 @@ class GatoEnfermo(models.Model):
     def __str__(self):
         return self.nombre
 
-class Configuracion(models.Model):
 
+class GatoFinalFeliz(models.Model):
+    nombre = models.CharField(max_length=255, null=False, blank=False)
+    descripcion = RichTextField(null=False, blank=False)
+
+    imagen_principal = models.ImageField(upload_to="photo/%y%m%d", max_length=255)
+
+    fecha = models.DateField(null=True, blank=True)
+
+    # Extra imagenes
+    imagen1 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
+    imagen2 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
+    imagen3 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
+    imagen4 = models.ImageField(upload_to="photo/%y%m%d", max_length=255, null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = "Gatos Finales Felices"
+
+    def __unicode__(self):
+        return self.nombre
+
+    def __str__(self):
+        return self.nombre
+
+
+class Configuracion(models.Model):
     imagen_principal = models.ImageField(upload_to="config", max_length=255, null=True, blank=True)
     email = models.EmailField(null=False, blank=False)
     pagina_facebook = models.URLField(blank=True)
@@ -60,6 +79,13 @@ class Configuracion(models.Model):
 
     # Seccion Quienes Somos
     quienes_somos = RichTextField(null=False, blank=False)
+
+    # Protocolo Adoption
+
+    protocolo_parrafo_1 = RichTextField(null=True, blank=True)
+    protocolo_parrafo_2 = RichTextField(null=True, blank=True)
+
+    # Hazte Teaming
 
     class Meta:
         verbose_name_plural = "Configuracion"

@@ -56,12 +56,17 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    
                     <li class="page-scroll">
-                        <a href="#portfolio">Casos</a>
+                        <a href="#sickcat">Casos</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#about">¿Quienes Somos?</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#happy-ending">Finales Felices</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#adoption-protocol">Adopción</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#contact">Contacto</a>
@@ -92,8 +97,8 @@
         </div>
     </header>
 
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
+    <!-- Sick Cats Section -->
+    <section id="sickcat">
         
         <div class="container">
             <div class="row">
@@ -103,9 +108,9 @@
                 </div>
             </div>
             <div class="row">
-                <div v-for="(item, index) in results">
+                <div v-for="(item, index) in sick_cats">
                     <div class="col-sm-4 portfolio-item">
-                        <a v-bind:href="'#portfolioModal' + index" class="portfolio-link" data-toggle="modal">
+                        <a v-bind:href="'#sickcatModal' + index" class="portfolio-link" data-toggle="modal">
                             <div class="caption">
                                 <div class="caption-content">
                                     <i class="fa fa-search-plus fa-3x"></i>
@@ -114,7 +119,7 @@
                             <img v-bind:src="item.imagen_principal" class="img-responsive" alt="">
                         </a>
                         <h3>
-                            <a v-bind:href="'#portfolioModal' + index" class="portfolio-link portfolio-link-text" data-toggle="modal">
+                            <a v-bind:href="'#sickcatModal' + index" class="portfolio-link portfolio-link-text" data-toggle="modal">
                                 {{ item.nombre }}
                             </a>
                         </h3>
@@ -143,6 +148,67 @@
                     <a v-bind:href="configuracion.paypal_url" class="btn btn-warning btn-lg btn-outline">
                         <i class="fa fa-credit-card"></i> Ayudanos!
                     </a>
+                    <a href="#contact" class="btn btn-lg btn-outline">
+                        <i class="fa fa-envelope-o"></i> Contacta con nosotros
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Happy Ending Section -->
+    <section id="happy-ending">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Finales Felices</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div v-for="(item, index) in happy_ending_cats">
+                    <div class="col-sm-4 portfolio-item">
+                        <a v-bind:href="'#happyendingModal' + index" class="portfolio-link" data-toggle="modal">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img v-bind:src="item.imagen_principal" class="img-responsive" alt="">
+                        </a>
+                        <h3>
+                            <a v-bind:href="'#happyendingModal' + index" class="portfolio-link portfolio-link-text" data-toggle="modal">
+                                {{ item.nombre }}
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adoption Protocol Section -->
+    <section class="success" id="adoption-protocol">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Protocolo de Adopcion</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row" v-if="configuracion.protocolo_parrafo_1">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <div v-html="configuracion.protocolo_parrafo_1"></div>
+                </div>
+            </div>
+            <div class="row" v-if="configuracion.protocolo_parrafo_2">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <div v-html="configuracion.protocolo_parrafo_2"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="#contact" class="btn btn-lg btn-outline">
                         <i class="fa fa-envelope-o"></i> Contacta con nosotros
                     </a>
@@ -247,9 +313,9 @@
         </a>
     </div>
 
-    <!-- Portfolio Modals -->
-    <div v-for="(item, index) in results">
-        <div class="portfolio-modal modal fade" v-bind:id="'portfolioModal' + index" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Sick Cat Modals -->
+    <div v-for="(item, index) in sick_cats">
+        <div class="portfolio-modal modal fade" v-bind:id="'sickcatModal' + index" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
                     <div class="lr">
@@ -317,6 +383,54 @@
             </div>
         </div>
     </div>
+
+    <!-- Happy Ending Cat Modals -->
+    <div v-for="(item, index) in happy_ending_cats">
+        <div class="portfolio-modal modal fade" v-bind:id="'happyendingModal' + index" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9 col-lg-offset-2">
+                            <div class="modal-body">
+                                <h2>{{ item.nombre }}</h2>
+                                <hr class="star-primary">
+                                <div class="caso-imagenes-row" v-if="item.imagen1">
+                                    <div class="caso-imagen caso-imagen1">
+                                        <img v-bind:src="item.imagen1" class="img-responsive img-centered" alt="">
+                                    </div>
+                                    <div class="caso-imagen caso-imagen2">
+                                        <img v-bind:src="item.imagen2" class="img-responsive img-centered" alt="">
+                                    </div>
+                                </div>
+                                <div class="caso-imagenes-row" v-if="item.imagen2">
+                                    <div class="caso-imagen caso-imagen3">
+                                        <img v-bind:src="item.imagen3" class="img-responsive img-centered" alt="">
+                                    </div>
+                                    <div class="caso-imagen caso-imagen4">
+                                        <img v-bind:src="item.imagen4" class="img-responsive img-centered" alt="">
+                                    </div>
+                                </div>
+                                <p class="caso-texto" v-html="item.descripcion"></p>
+                                <ul class="list-inline item-details" v-if="item.fecha">
+                                    <li v-if="item.fecha">Fecha:
+                                        <strong><a href="http://startbootstrap.com">{{ item.fecha }}</a>
+                                        </strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>

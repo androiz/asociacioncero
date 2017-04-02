@@ -20,10 +20,11 @@ from rest_framework import routers
 from django.conf import settings
 from django.conf.urls.static import static
 
-from api.viewsets import GatoEnfermoViewSet, ConfiguracionViewSet
+from api.viewsets import GatoEnfermoViewSet, GatoFinalFelizViewSet, ConfiguracionViewSet
 
 router = routers.DefaultRouter()
 router.register(r'gato_enfermo', GatoEnfermoViewSet)
+router.register(r'gato_final_feliz', GatoFinalFelizViewSet)
 router.register(r'configuracion', ConfiguracionViewSet)
 
 urlpatterns = [
