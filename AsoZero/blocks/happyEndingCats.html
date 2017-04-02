@@ -1,0 +1,30 @@
+<!-- Happy Ending Section -->
+<section id="happy-ending">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Finales Felices</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <div v-for="(item, index) in happy_ending_cats">
+                <div class="col-sm-4 portfolio-item">
+                    <a v-bind:href="'#happyendingModal' + index" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img v-bind:src="item.imagen_principal" class="img-responsive" alt="">
+                    </a>
+                    <h3>
+                        <a v-bind:href="'#happyendingModal' + index" class="portfolio-link portfolio-link-text" data-toggle="modal">
+                            {{ item.nombre }}
+                        </a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
