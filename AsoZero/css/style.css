@@ -70,3 +70,94 @@ header {
 .caso-imagenes-row{
 	text-align: center;
 }
+
+/* Sick Cat */
+#sickcat .portfolio-item {
+  margin: 0 0 15px;
+  right: 0;
+}
+#sickcat .portfolio-item .portfolio-link {
+  display: block;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+#sickcat .portfolio-item .portfolio-link .caption {
+  background: rgba(24, 188, 156, 0.9);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+}
+#sickcat .portfolio-item .portfolio-link .caption:hover {
+  opacity: 1;
+}
+#sickcat .portfolio-item .portfolio-link .caption .caption-content {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+  top: 50%;
+  margin-top: -12px;
+  color: white;
+}
+#sickcat .portfolio-item .portfolio-link .caption .caption-content i {
+  margin-top: -12px;
+}
+#sickcat .portfolio-item .portfolio-link .caption .caption-content h3,
+#sickcat .portfolio-item .portfolio-link .caption .caption-content h4 {
+  margin: 0;
+}
+#sickcat * {
+  z-index: 2;
+}
+
+
+/* Happy Ending Cat */
+#happy-ending .portfolio-item {
+  margin: 0 0 15px;
+  right: 0;
+}
+#happy-ending .portfolio-item .portfolio-link {
+  display: block;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+#happy-ending .portfolio-item .portfolio-link .caption {
+  background: rgba(24, 188, 156, 0.9);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+}
+#happy-ending .portfolio-item .portfolio-link .caption:hover {
+  opacity: 1;
+}
+#happy-ending .portfolio-item .portfolio-link .caption .caption-content {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+  top: 50%;
+  margin-top: -12px;
+  color: white;
+}
+#happy-ending .portfolio-item .portfolio-link .caption .caption-content i {
+  margin-top: -12px;
+}
+#happy-ending .portfolio-item .portfolio-link .caption .caption-content h3,
+#happy-ending .portfolio-item .portfolio-link .caption .caption-content h4 {
+  margin: 0;
+}
+#happy-ending * {
+  z-index: 2;
+}

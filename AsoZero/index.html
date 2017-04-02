@@ -97,6 +97,33 @@
         </div>
     </header>
 
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>¿Quiénes Somos?</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <div v-html="configuracion.quienes_somos"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a v-bind:href="configuracion.paypal_url" class="btn btn-warning btn-lg btn-outline">
+                        <i class="fa fa-credit-card"></i> Ayudanos!
+                    </a>
+                    <a href="#contact" class="btn btn-lg btn-outline">
+                        <i class="fa fa-envelope-o"></i> Contacta con nosotros
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Sick Cats Section -->
     <section id="sickcat">
         
@@ -129,25 +156,22 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="success" id="about">
+    <!-- Hazte Teaming Section -->
+    <section class="success" id="teaming">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>¿Quiénes Somos?</h2>
+                    <h2>Hazte Teaming!</h2>
                     <hr class="star-light">
                 </div>
             </div>
-            <div class="row">
+            <div class="row" v-if="configuracion.teaming_parrafo_1">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <div v-html="configuracion.quienes_somos"></div>
+                    <div v-html="configuracion.teaming_parrafo_1"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a v-bind:href="configuracion.paypal_url" class="btn btn-warning btn-lg btn-outline">
-                        <i class="fa fa-credit-card"></i> Ayudanos!
-                    </a>
                     <a href="#contact" class="btn btn-lg btn-outline">
                         <i class="fa fa-envelope-o"></i> Contacta con nosotros
                     </a>
@@ -200,11 +224,6 @@
             <div class="row" v-if="configuracion.protocolo_parrafo_1">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <div v-html="configuracion.protocolo_parrafo_1"></div>
-                </div>
-            </div>
-            <div class="row" v-if="configuracion.protocolo_parrafo_2">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <div v-html="configuracion.protocolo_parrafo_2"></div>
                 </div>
             </div>
             <div class="row">

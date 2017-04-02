@@ -82,10 +82,10 @@ class Configuracion(models.Model):
 
     # Protocolo Adoption
 
-    protocolo_parrafo_1 = RichTextField(null=True, blank=True)
-    protocolo_parrafo_2 = RichTextField(null=True, blank=True)
+    protocolo_parrafo_1 = RichTextField(null=False, blank=False)
 
     # Hazte Teaming
+    teaming_parrafo_1 = RichTextField(null=False, blank=False)
 
     class Meta:
         verbose_name_plural = "Configuracion"
