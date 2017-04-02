@@ -154,6 +154,7 @@ CKEDITOR_CONFIGS = {
         'toolbar_Custom': [
             ['Undo', 'Redo'],
             ['Bold', 'Italic', 'Underline'],
+            ['Indent', 'Blockquote'],
         ]
     }
 }
