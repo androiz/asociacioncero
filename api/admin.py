@@ -50,6 +50,10 @@ class ConfiguracionAdmin(admin.ModelAdmin):
         }),
         ('Protocolo de Adopcion', {
             'classes': ('collapse',),
-            'fields': ('protocolo_parrafo_1', 'protocolo_parrafo_2',)
+            'fields': ('protocolo_parrafo_1',)
+        }),
+        ('Hazte Teaming', {
+            'classes': ('collapse',),
+            'fields': ('teaming_parrafo_1',)
         }),
     )
