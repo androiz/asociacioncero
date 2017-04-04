@@ -54,6 +54,6 @@ class ConfiguracionAdmin(admin.ModelAdmin):
         }),
         ('Hazte Teaming', {
             'classes': ('collapse',),
-            'fields': ('teaming_parrafo_1',)
+            'fields': ('teaming_parrafo_1', 'teaming_link')
         }),
     )
