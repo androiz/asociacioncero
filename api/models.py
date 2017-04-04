@@ -86,6 +86,7 @@ class Configuracion(models.Model):
 
     # Hazte Teaming
     teaming_parrafo_1 = RichTextField(null=False, blank=False)
+    teaming_link = models.URLField(default="http://teaming.net/asociacioncero")
 
     class Meta:
         verbose_name_plural = "Configuracion"
