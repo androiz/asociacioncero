@@ -76,7 +76,7 @@
                     </li>
                     </li>
                     <li class="page-scroll">
-                        <a href="#ayudanos">Adopción</a>
+                        <a href="#ayudanos"><i class="fa fa-credit-card"></i> Ayúdanos</a>
                     </li>
                     <!--li>
                         <a v-bind:href="configuracion.paypal_url"><i class="fa fa-credit-card"></i> Ayúdanos</a>
@@ -281,7 +281,11 @@
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col col-md-6">
+                    <div class="footer-col col-md-4">
+                        <h3>Ayúdanos</h3>
+                        <p>Paypal</p>
+                    </div>
+                    <div class="footer-col col-md-4">
                         <h3>En la Web</h3>
                         <ul class="list-inline">
                             <li>
@@ -292,7 +296,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-col col-md-6">
+                    <div class="footer-col col-md-4">
                         <h3>Contacto</h3>
                         <p v-if="configuracion.email">Email: <a v-bind:href="'mailto:' + configuracion.email">{{ configuracion.email }}</a></p>
                     </div>

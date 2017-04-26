@@ -58,6 +58,6 @@ class ConfiguracionAdmin(admin.ModelAdmin):
         }),
         ('Ayúdanos', {
             'classes': ('collapse',),
-            'fields': ('ayudanos_parrafo',)
+            'fields': ('ayudanos_parrafo', 'ayudanos_footer')
         }),
     )

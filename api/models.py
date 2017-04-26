@@ -90,6 +90,7 @@ class Configuracion(models.Model):
 
     # Ayudanos
     ayudanos_parrafo = RichTextField(null=False, blank=True)
+    ayudanos_footer = RichTextField(null=False, blank=False)
 
     class Meta:
         verbose_name_plural = "Configuracion"
