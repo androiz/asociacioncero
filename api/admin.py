@@ -56,4 +56,8 @@ class ConfiguracionAdmin(admin.ModelAdmin):
             'classes': ('collapse',),
             'fields': ('teaming_parrafo_1', 'teaming_link')
         }),
+        ('Ayúdanos', {
+            'classes': ('collapse',),
+            'fields': ('ayudanos_parrafo',)
+        }),
     )
