@@ -298,7 +298,7 @@
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Contacto</h3>
-                        <p v-if="configuracion.email">Email: <a v-bind:href="'mailto:' + configuracion.email">{{ configuracion.email }}</a></p>
+                        <p class="email-footer" v-if="configuracion.email">Email </br><a v-bind:href="'mailto:' + configuracion.email">{{ configuracion.email }}</a></p>
                     </div>
                 </div>
             </div>

@@ -161,3 +161,6 @@ header {
 #happy-ending * {
   z-index: 2;
 }
+.email-footer a{
+    color: #a9a9a9;
+}
