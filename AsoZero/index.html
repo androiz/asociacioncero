@@ -97,7 +97,7 @@
                         <img class="img-responsive" src="img/logo.jpg" alt="">
                         <span class="name">Asociación CERO</span>
                         <span class="skills">Ayúdanos a salvar sus vidas</span>
-                        <span class="intro-btn"><a v-bind:href="configuracion.paypal_url" class="btn btn-primary btn-lg btn-outline"><i class="fa fa-credit-card"></i>  Ayúdanos!</a></span>
+                        <span class="intro-btn"><a href="#ayudanos" class="btn btn-primary btn-lg btn-outline"><i class="fa fa-credit-card"></i>  Ayúdanos!</a></span>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a v-bind:href="configuracion.paypal_url" class="btn btn-warning btn-lg btn-outline">
+                    <a href="#ayudanos" class="btn btn-warning btn-lg btn-outline">
                         <i class="fa fa-credit-card"></i> Ayúdanos!
                     </a>
                     <a href="#contact" class="btn btn-lg btn-outline">
@@ -200,32 +200,32 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    <form method="post" action="/mail/contact_me.php" name="sentMessage" id="contactForm" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Introduce tu nombre.">
+                                <input type="text" class="form-control" placeholder="Nombre" name="name" id="name" required data-validation-required-message="Introduce tu nombre.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Email</label>
-                                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Introduce tu dirección de correo electronico.">
+                                <input type="email" class="form-control" placeholder="Email" name="email" id="email" required data-validation-required-message="Introduce tu dirección de correo electronico.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Asunto</label>
-                                <input type="text" class="form-control" placeholder="Asunto" id="subject" data-validation-required-message="Asunto.">
+                                <input type="text" class="form-control" placeholder="Asunto" name="phone" id="phone" data-validation-required-message="Asunto.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Mensaje</label>
-                                <textarea rows="5" class="form-control" placeholder="Mensaje" id="message" required data-validation-required-message="Introduce el mensaje."></textarea>
+                                <textarea rows="5" class="form-control" placeholder="Mensaje" name="message" id="message" required data-validation-required-message="Introduce el mensaje."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -382,8 +382,7 @@
                                     </li>
                                 </ul>
                                 <button type="button" class="btn btn-default btn-lg btn-xlg" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
-                                <a v-if="item.url_paypal === ''" v-bind:href="configuracion.paypal_url" type="button" class="btn btn-warning btn-lg btn-xlg" data-dismiss="modal"><i class="fa fa-credit-card"></i> Ayuda</a>
-                                <a v-else class="btn btn-warning btn-lg btn-xlg" v-bind:href="item.url_paypal"><i class="fa fa-credit-card"></i> Ayuda</a>
+                                <button class="btn btn-warning btn-lg btn-xlg" data-dismiss="modal"><i class="fa fa-credit-card"></i> Ayuda</button>
                             </div>
                         </div>
                     </div>
@@ -411,6 +410,16 @@
 
     <!-- Vue -->
     <script src="script.js"></script>
+
+    <script>
+    $( window ).on( "load", function() {
+        $('.modal').on('hidden.bs.modal', function (e) {
+          $('html, body').animate({
+                scrollTop: $("#ayudanos").offset().top
+          }, 2000);
+        });
+    });
+    </script>
 
 </body>
 
