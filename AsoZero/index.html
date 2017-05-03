@@ -200,32 +200,32 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form method="post" action="/mail/contact_me.php" name="sentMessage" id="contactForm" novalidate>
+                    <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" placeholder="Nombre" name="name" id="name" required data-validation-required-message="Introduce tu nombre.">
+                                <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Introduce tu nombre.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Email</label>
-                                <input type="email" class="form-control" placeholder="Email" name="email" id="email" required data-validation-required-message="Introduce tu dirección de correo electronico.">
+                                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Introduce tu dirección de correo electronico.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Asunto</label>
-                                <input type="text" class="form-control" placeholder="Asunto" name="phone" id="phone" data-validation-required-message="Asunto.">
+                                <input type="text" class="form-control" placeholder="Asunto" id="subject" data-validation-required-message="Asunto.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Mensaje</label>
-                                <textarea rows="5" class="form-control" placeholder="Mensaje" name="message" id="message" required data-validation-required-message="Introduce el mensaje."></textarea>
+                                <textarea rows="5" class="form-control" placeholder="Mensaje" id="message" required data-validation-required-message="Introduce el mensaje."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
