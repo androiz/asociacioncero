@@ -1,0 +1,11 @@
+AsoZero/.DS_Store
+
+.DS_Store
+.idea
+
+*.pyc
+local_settings.py
+
+db.sqlite3
+
+media
